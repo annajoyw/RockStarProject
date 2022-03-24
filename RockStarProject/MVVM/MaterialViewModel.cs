@@ -34,10 +34,32 @@ namespace RockStarProject.MVVM
                 OnPropertyChanged();
             }
         }
+        private string imageSource = "defualt";
+        public string ImageSource
+        {
+            get
+            {
+                return imageSource;
+            }
+            set
+            {
+                imageSource = value;
+                OnPropertyChanged();
+            }
+        }
 
         private void MaterialChanged(object param)
         {
             MaterialName = (string)param;
+            switch (MaterialName)
+            {
+                case "Blue Agate":
+                    imageSource = "add/path/here";
+                        break;
+                case "Copper":
+                    imageSource = "add/path/here";
+                    break;
+            }
         }
 
         public MaterialViewModel()
