@@ -3,10 +3,80 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vModel="clr-namespace:RockStarProject.MVVM"
         xmlns:local="clr-namespace:RockStarProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.DataContext>
+        <vModel:MaterialViewModel/>
+    </Window.DataContext>
+    <Grid Background="#404040">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <Border Grid.Row ="0" Grid.Column="0" Background="#262626"/>
+        <Border Grid.Row ="1" Grid.Column="0" Background="#000000"/>
+
+        <Expander Header="Library" Margin="1" Grid.RowSpan="3" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
+            <StackPanel  Background="#000000">
+                <RadioButton
+                             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"
+                             Content="Blue Agate"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             IsChecked="True"
+                             Command="{Binding SelectedMaterialChangedCommand}"
+                             x:Name="BlueAgate"
+                             CommandParameter="{Binding ElementName=BlueAgate, Path=Content}"
+                             />
+                <RadioButton Content="Copper"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding SelectedMaterialChangedCommand}"
+                             x:Name="Copper"
+                             CommandParameter="{Binding ElementName=Copper, Path=Content}"
+                             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
+                <RadioButton Content="Gold"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding SelectedMaterialChangedCommand}"
+                             x:Name="Gold"
+                             CommandParameter="{Binding ElementName=Gold, Path=Content}"
+                             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
+                <RadioButton Content="Onyx"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding SelectedMaterialChangedCommand}"
+                             x:Name="Onyx"
+                             CommandParameter="{Binding ElementName=Onyx, Path=Content}"
+                             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
+                <RadioButton Content="Stone"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding SelectedMaterialChangedCommand}"
+                             x:Name="Stone"
+                             CommandParameter="{Binding ElementName=Stone, Path=Content}"
+                             DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
+            </StackPanel>
+           
+        </Expander>
+        <TextBlock Grid.Column="1" Grid.Row="0" Margin="5 0 0 5" Foreground="White" FontSize="22" Text="{Binding MaterialName}"/>
     </Grid>
 </Window>

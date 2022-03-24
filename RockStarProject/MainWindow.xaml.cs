@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RockStarProject.MVVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,11 @@ namespace RockStarProject
     /// </summary>
     public partial class MainWindow : Window
     {
+        public MaterialViewModel ViewModel { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            ViewModel = (MaterialViewModel)DataContext;
         }
     }
 }
