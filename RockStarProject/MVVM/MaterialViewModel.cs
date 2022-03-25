@@ -10,8 +10,7 @@ namespace RockStarProject.MVVM
 {
     public class MaterialViewModel : Notifiable
     {
-
-        public MaterialModel MaterialModel { get; set; } = new MaterialModel();
+        #region Commands
 
         private ICommand selectedMaterialChangedCommand;
         public ICommand SelectedMaterialChangedCommand
@@ -23,6 +22,11 @@ namespace RockStarProject.MVVM
                 return selectedMaterialChangedCommand;
             }
         }
+
+        #endregion
+
+        #region Model Properties
+        public MaterialModel MaterialModel { get; set; } = new MaterialModel();
 
         private bool isFavoriteChecked;
         public bool IsFavoriteChecked
@@ -54,6 +58,10 @@ namespace RockStarProject.MVVM
                 OnPropertyChanged();
             }
         }
+
+        #endregion
+
+        #region View Properties
         private string imageSource = "defualt";
         public string ImageSource
         {
@@ -67,7 +75,9 @@ namespace RockStarProject.MVVM
                 OnPropertyChanged();
             }
         }
+        #endregion
 
+        #region Methods
         private void MaterialChanged(object param)
         {
             MaterialName = (string)param;
@@ -75,18 +85,19 @@ namespace RockStarProject.MVVM
             {
                 case "Blue Agate":
                     imageSource = "add/path/here";
-                        break;
+                    break;
                 case "Copper":
                     imageSource = "add/path/here";
                     break;
             }
         }
+        #endregion
 
+        #region Constructor
         public MaterialViewModel()
         {
 
         }
-
-        
+        #endregion
     }
 }
