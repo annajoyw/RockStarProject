@@ -79,9 +79,11 @@
             </StackPanel>
 
         </Expander>
-
-        <TextBlock  Grid.Column="1" Grid.Row="0" Margin="5 0 0 5" Foreground="White" FontSize="22" Text="{Binding MaterialName}"/>
-        <ToggleButton Grid.Row="0" VerticalAlignment="Top" IsChecked="{Binding IsFavoriteChecked, Mode=TwoWay}"  Template="{DynamicResource StarToggleButton}" Grid.Column="1" Margin="2,-11,97,0" Grid.RowSpan="2" />
+        <WrapPanel Grid.Row="0" Grid.Column="1">
+            <ToggleButton Margin="5 5 0 0"  HorizontalAlignment="Left" IsChecked="{Binding IsFavoriteChecked, Mode=TwoWay}" Template="{DynamicResource StarToggleButton}" Height="20" Width="20"  />
+            <TextBlock Margin="5" Foreground="White" FontSize="22" Text="{Binding MaterialName}" HorizontalAlignment="Right" ></TextBlock>
+        </WrapPanel>
+        
 
 
         <Border  Margin="20 10 10 10" Grid.Column="1" Grid.Row="1" CornerRadius="10" >
