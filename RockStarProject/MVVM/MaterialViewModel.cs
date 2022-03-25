@@ -10,6 +10,9 @@ namespace RockStarProject.MVVM
 {
     public class MaterialViewModel : Notifiable
     {
+
+        public MaterialModel MaterialModel { get; set; } = new MaterialModel();
+
         private ICommand selectedMaterialChangedCommand;
         public ICommand SelectedMaterialChangedCommand
         {
@@ -18,6 +21,23 @@ namespace RockStarProject.MVVM
                 if (selectedMaterialChangedCommand == null)
                     selectedMaterialChangedCommand = new RelayCommand(p => MaterialChanged(p));
                 return selectedMaterialChangedCommand;
+            }
+        }
+
+        private bool isFavoriteChecked;
+        public bool IsFavoriteChecked
+        {
+            get
+            {
+                return isFavoriteChecked;
+            }
+            set
+            {
+                isFavoriteChecked = value;
+                OnPropertyChanged();
+                MaterialModel.Name = MaterialName;
+                MaterialModel.IsFavorite = value;
+                XMLReaderAndWriter.WriteXmlFile(MaterialModel);
             }
         }
 

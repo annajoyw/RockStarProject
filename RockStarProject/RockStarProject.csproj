@@ -67,6 +67,7 @@
     <Compile Include="Core\DelegateCommand.cs" />
     <Compile Include="Core\Notifiable.cs" />
     <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Core\XMLReaderAndWriter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -81,6 +82,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\MaterialModel.cs" />
     <Compile Include="MVVM\MaterialViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
