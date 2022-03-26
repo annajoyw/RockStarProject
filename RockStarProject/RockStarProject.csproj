@@ -108,7 +108,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
+    <Resource Include="Images\Stone\albedo.png" />
+    <Resource Include="Images\Stone\material.png" />
+    <Resource Include="Images\Stone\material_ball.png" />
+    <Resource Include="Images\Stone\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Blue_agate\albedo.png" />
+    <Resource Include="Images\Blue_agate\material.png" />
+    <Resource Include="Images\Blue_agate\material_ball.png" />
+    <Resource Include="Images\Blue_agate\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Copper\albedo.png" />
+    <Resource Include="Images\Copper\material.png" />
+    <Resource Include="Images\Copper\material_ball.png" />
+    <Resource Include="Images\Copper\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gold\albedo.png" />
+    <Resource Include="Images\Gold\material.png" />
+    <Resource Include="Images\Gold\material_ball.png" />
+    <Resource Include="Images\Gold\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Onyx\albedo.png" />
+    <Resource Include="Images\Onyx\material.png" />
+    <Resource Include="Images\Onyx\material_ball.png" />
+    <Resource Include="Images\Onyx\normal.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
