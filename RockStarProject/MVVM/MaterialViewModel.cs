@@ -67,11 +67,11 @@ namespace RockStarProject.MVVM
         {
             get
             {
-                return imageSource;
+                return imageSourceMaterialBall;
             }
             set
             {
-                imageSource = value;
+                imageSourceMaterialBall = value;
                 OnPropertyChanged();
             }
         }
@@ -84,10 +84,19 @@ namespace RockStarProject.MVVM
             switch (MaterialName)
             {
                 case "Blue Agate":
-                    imageSource = "add/path/here";
-                    break;
+                    ImageSourceMaterialBall = "../../Images/Blue_agate/material_ball.png";
+                        break;
                 case "Copper":
-                    imageSource = "add/path/here";
+                    ImageSourceMaterialBall = "../../Images/Copper/material_ball.png";
+                    break;
+                case "Gold":
+                    ImageSourceMaterialBall = "../../Images/Gold/material_ball.png";
+                    break;
+                case "Onyx":
+                    ImageSourceMaterialBall = "../../Images/Onyx/material_ball.png";
+                    break;
+                case "Stone":
+                    ImageSourceMaterialBall = "../../Images/Stone/material_ball.png";
                     break;
             }
         }
