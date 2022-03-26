@@ -84,10 +84,7 @@
             <TextBlock Margin="5" Foreground="White" FontSize="22" Text="{Binding MaterialName}" HorizontalAlignment="Right" ></TextBlock>
         </WrapPanel>
         
-
-
-        <Border  Margin="20 10 10 10" Grid.Column="1" Grid.Row="1" CornerRadius="10" >
-        <TextBlock Grid.Column="1" Grid.Row="0" Margin="5 0 0 5" Foreground="White" FontSize="22" Text="{Binding MaterialName}"/>
+      
         <Border  Margin="20 10 10 10" Grid.Column="1" Grid.Row="1" CornerRadius="10" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
@@ -97,19 +94,33 @@
             </Border.Background>
             <Image DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}" Source="{Binding ImageSourceMaterialBall}"/>
         </Border>
-        <Border  Margin="10 10 20 10" Grid.Column="2" Grid.Row="1" CornerRadius="10">
+        <TextBlock Margin="10" Text="TEXTURES" Grid.Column="3" FontSize="15" Foreground="White"/>
+        <Border  Margin="10 10 20 10" Grid.Column="2" Grid.Row="1" CornerRadius="10" Name="TextureBorder" MinHeight="100" MinWidth="100">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                </Grid.RowDefinitions>
+                <Button Style="{StaticResource LeftRightArrowButtons}" Command="{Binding GetNextTextureCommand}" FontFamily="Marlett" BorderThickness="0" Content="3" Foreground="#404040" Background="Transparent" FontSize="35" Grid.Column="0" Height="40" Width="30"/>
+                
+                <Image Grid.Column="1"  Margin="0 30 0 30" VerticalAlignment="Center" Height="{Binding ElementName=TextureBorder, Path=ActualHeight}" Width="{Binding ElementName=TextureBorder, Path=ActualWidth}" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}" Source="{Binding ImageSourceTexture}"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" Margin="-20" HorizontalAlignment="Center" FontSize="15" Foreground="White" Text="{Binding TextureLable}"/>
+                <Button Command="{Binding GetNextTextureCommand}" FontFamily="Marlett" BorderThickness="0" Content="4" Foreground="#404040" Background="Transparent" FontSize="35" Grid.Column="2" Height="40"  Width="30" />
+            </Grid>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
                     <GradientStop Color=" #262626" Offset="0.0" />
                     <GradientStop Color="#000000" Offset="1" />
                 </LinearGradientBrush>
             </Border.Background>
-            <StackPanel>
-                <TextBlock Margin="10" Text="TEXTURES" FontSize="15" Foreground="White"/>
-                <Image DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}" Source="{Binding ImageSourceMaterialBall}"/>
-            </StackPanel>
-           
-        </Border>
+            
+            
+            </Border>
         <Border  Margin="20" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" CornerRadius="10">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
@@ -117,8 +128,7 @@
                     <GradientStop Color="#000000" Offset="1" />
                 </LinearGradientBrush>
             </Border.Background>
-           
-        </Border>
+                  </Border>
 
     </Grid>
 </Window>
