@@ -54,6 +54,7 @@ namespace RockStarProject.MVVM
                 MaterialModel.Name = MaterialName;
                 MaterialModel.IsFavorite = value;
                 XMLReaderAndWriter.WriteXmlFile(MaterialModel);
+                FavoritesList.Add(MaterialModel);
             }
         }
 
@@ -123,6 +124,17 @@ namespace RockStarProject.MVVM
                 textureLable = value;
                 OnPropertyChanged();
 
+            }
+        }
+
+        private List<MaterialModel> favoritesList = new List<MaterialModel>();
+        public List<MaterialModel> FavoritesList
+        {
+            get { return favoritesList; }
+            set
+            {
+                favoritesList = value;
+                OnPropertyChanged();
             }
         }
 

@@ -12,7 +12,7 @@ namespace RockStarProject.Core
     {
         public static void WriteXmlFile<T>(T objectToWrite) where T : new()
         {
-            var filePath = "C:\\Users\\Anna\\source\\repos\\RockStarProject\\RockStarProject\\Core\\Favorites.xml";
+            var filePath = "..\\..\\Core\\Favorites.xml";
             TextWriter writer = null;
             try
             {
