@@ -28,11 +28,11 @@ namespace RockStarProject.MVVM
             get { return porositySliderValue; }
             set { porositySliderValue = value; OnPropertyChanged(); }
         }
-        private int translucency = 5;
-        public int Translucency
+        private int translucencySliderValue = 5;
+        public int TranslucencySliderValue
         {
-            get { return translucency; }
-            set { translucency = value; OnPropertyChanged(); }
+            get { return translucencySliderValue; }
+            set { translucencySliderValue = value; OnPropertyChanged(); }
         }
         #endregion
 

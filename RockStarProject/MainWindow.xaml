@@ -148,8 +148,8 @@
         
         <!--Material Properties Panel-->
         <Border  Margin="10" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" CornerRadius="10">
-            <Viewbox StretchDirection="Both" Stretch="Uniform" Margin="10" HorizontalAlignment="Left">
-                <c:PropertiesPanel Width="600"/>
+            <Viewbox StretchDirection="Both" Stretch="Uniform">
+                <c:PropertiesPanel Width="800" Height="250"/>
             </Viewbox>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">

@@ -5,49 +5,52 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RockStarProject.Themes"
              xmlns:vModel="clr-namespace:RockStarProject.MVVM"
-             mc:Ignorable="d" >
+             mc:Ignorable="d" 
+             d:Height="250" d:Width="800">
     <UserControl.DataContext>
         <vModel:PropertiesViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <Grid>
+        <Grid Margin="0,0,0,10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width=".8*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Margin="5" Text="MATERIAL PROPERTIES" FontWeight="Bold" FontSize="12" Foreground="White"/>
-            <StackPanel Grid.Column="0" Grid.Row="1" Margin="5 -5 0 5">
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="3" Margin="5,25,235,37" Grid.RowSpan="2">
                 <Label Margin="-5" Content="Metalness" Foreground="White"/>
                 <WrapPanel Grid.ColumnSpan="2">
-                    <Slider x:Name="MetalnessSlider" MinWidth="100" Maximum="15" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
+                    <Slider x:Name="MetalnessSlider" MinWidth="250" Maximum="15" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
                     <Label Content="{Binding ElementName=MetalnessSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
                 </WrapPanel>
                 <Label Margin="-5" Content="Sheen" Foreground="White"/>
                 <WrapPanel Grid.ColumnSpan="2">
-                    <Slider x:Name="MetalnessSlider1"  MinWidth="100" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
-                    <Label Content="{Binding ElementName=MetalnessSlider1, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
+                    <Slider x:Name="SheenSlider"  MinWidth="250" Value="{Binding SheenSliderValue}" TickFrequency="1" Margin="3" />
+                    <Label Content="{Binding ElementName=SheenSlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
                 </WrapPanel>
                 <Label Margin="-5" Content="Porosity" Foreground="White"/>
                 <WrapPanel Grid.ColumnSpan="2">
-                    <Slider x:Name="MetalnessSlider2"  MinWidth="100" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
-                    <Label Content="{Binding ElementName=MetalnessSlider2, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
+                    <Slider x:Name="PorositySlider"  MinWidth="250" Value="{Binding PorositySliderValue}" TickFrequency="1" Margin="3" />
+                    <Label Content="{Binding ElementName=PorositySlider, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
                 </WrapPanel>
                 <Label Margin="-5" Content="Translucency" Foreground="White"/>
                 <WrapPanel Grid.ColumnSpan="2">
-                    <Slider x:Name="MetalnessSlider3"  MinWidth="100" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
+                    <Slider x:Name="MetalnessSlider3"  MinWidth="250" Value="{Binding MetalnessSliderValue}" TickFrequency="1" Margin="3" />
                     <Label Content="{Binding ElementName=MetalnessSlider3, Path=Value, UpdateSourceTrigger=PropertyChanged}" Foreground="White"/>
                 </WrapPanel>
             </StackPanel>
-            
-            <Viewbox Grid.Column="2" Grid.Row="1" StretchDirection="Both" Stretch="Uniform">
+            <Viewbox Grid.Column="1" Grid.Row="1" VerticalAlignment="Center"  StretchDirection="Both" Stretch="Uniform">
                 <local:PropertyDial Height="100" Width="100" />
             </Viewbox>
-           
+            <Viewbox Grid.Column="2" Grid.Row="1" VerticalAlignment="Top" StretchDirection="Both" Stretch="Uniform">
+                <local:PropertyDial Height="100" Width="100" />
+            </Viewbox>
+
 
         </Grid>
 
