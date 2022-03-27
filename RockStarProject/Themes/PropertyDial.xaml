@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="RockStarProject.Themes.PropertyDial"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RockStarProject.Themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="100">
+    <Grid IsManipulationEnabled="True" ManipulationDelta="Grid_ManipulationDelta">
+        <Ellipse 
+                 Fill="Gray"
+                 Stroke="Black"
+                 />
+        <Grid>
+            <Grid.RenderTransform>
+                <RotateTransform Angle="{Binding Angle}" CenterX="225" CenterY="225" />
+            </Grid.RenderTransform>
+            <Ellipse Width="10"
+                     Height="10"
+                     Margin="0"
+                     VerticalAlignment="Top"
+                     Fill="#FFFFFDF3"
+                     Stroke="Black"
+                     />
+            <Grid>
+                <Ellipse Fill="Black" Height="80" Width="80" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

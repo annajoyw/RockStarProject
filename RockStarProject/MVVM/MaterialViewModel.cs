@@ -138,14 +138,6 @@ namespace RockStarProject.MVVM
             }
         }
 
-        private double metalnessSliderValue = 5;
-        public double MetalnessSliderValue
-        {
-            get { return metalnessSliderValue; }
-            set { metalnessSliderValue = value; OnPropertyChanged(); }
-        }
-
-       
         #endregion
 
         #region Methods
