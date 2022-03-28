@@ -57,10 +57,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\PropertiesViewModel.cs" />
-    <Compile Include="Themes\PropertiesPanel.xaml.cs">
+    <Compile Include="Themes\Controls\PropertiesPanel.xaml.cs">
       <DependentUpon>PropertiesPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Themes\PropertyDial.xaml.cs">
+    <Compile Include="Themes\Controls\PropertyDial.xaml.cs">
       <DependentUpon>PropertyDial.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
@@ -83,11 +83,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\PropertiesPanel.xaml">
+    <Page Include="Themes\Controls\PropertiesPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Themes\PropertyDial.xaml">
+    <Page Include="Themes\Controls\PropertyDial.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
