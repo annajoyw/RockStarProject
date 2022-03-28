@@ -6,7 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Themes/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/Styles/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Themes/Styles/StarButton.xaml"/>
+                <ResourceDictionary Source="Themes/Styles/LeftRightButton.xaml"/>
+                <ResourceDictionary Source="Themes/Styles/PropertySlider.xaml"/>
+                <ResourceDictionary Source="Themes/Styles/Expander.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
