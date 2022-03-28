@@ -10,7 +10,7 @@ namespace RockStarProject.MVVM
     public class PropertiesViewModel : Notifiable
     {
         #region Slider Values
-        private int metalnessSliderValue = 5;
+        private int metalnessSliderValue = 0;
         public int MetalnessSliderValue
         {
             get { return metalnessSliderValue; }
