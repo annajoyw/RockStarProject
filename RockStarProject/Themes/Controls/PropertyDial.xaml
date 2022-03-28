@@ -9,8 +9,19 @@
     <Grid IsManipulationEnabled="True" ManipulationDelta="Grid_ManipulationDelta">
         <Ellipse 
                  Fill="Gray"
+                 Stroke="Black"/>
+        <Ellipse 
+                
                  Stroke="Black"
-                 />
+                 >
+            <Ellipse.Fill>
+                <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
+                    <GradientStop Color="#00b09c" Offset="0.5" />
+                    <GradientStop Color="#00b0f0" Offset="1" />
+                </LinearGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+       
         <Grid>
             <Grid.RenderTransform>
                 <RotateTransform Angle="{Binding Angle}" CenterX="225" CenterY="225" />
@@ -20,10 +31,14 @@
                      Margin="0"
                      VerticalAlignment="Top"
                      Fill="#FFFFFDF3"
-                     Stroke="Black"
-                     />
+                     Stroke="Black"/>
             <Grid>
                 <Ellipse Fill="Black" Height="80" Width="80" />
+                <Ellipse HorizontalAlignment="Left" Height="100" Margin="0,75,0,-75" VerticalAlignment="Top" Fill="#262626" Width="100" ClipToBounds="True">
+
+                </Ellipse>
+                <TextBlock HorizontalAlignment="Left" Margin="25,82,0,0" Text=" Roughness" TextWrapping="Wrap" FontSize="10" Foreground="White" VerticalAlignment="Top" Width="54"/>
+                <TextBox HorizontalAlignment="Left" Height="23" BorderThickness="0" Background="Transparent" Foreground="White" Text="0.38" Margin="37,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
             </Grid>
         </Grid>
     </Grid>

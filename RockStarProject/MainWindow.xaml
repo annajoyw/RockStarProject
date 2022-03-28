@@ -23,8 +23,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row ="0" Grid.Column="0" Background="#262626"/>
-        <Border Grid.Row ="2" Grid.Column="0" Background="#262626"/>
+        <Border Grid.Row ="0" Grid.Column="0" Background="#000000"/>
+        <Border Grid.Row ="2" Grid.Column="0" Background="#000000"/>
         <Border Grid.Row ="1" Grid.RowSpan="2" Grid.Column="0" Background="#000000"/>
         
         <!--Library Panel-->
@@ -85,7 +85,7 @@
         
         <!--Favorites Panel-->
         <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-1.55" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
-            <ListBox Background="#000000" ItemsSource="{Binding FavoritesList}" Foreground="White" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}">
+            <ListBox Background="#000000" BorderThickness="0" ItemsSource="{Binding FavoritesList}" Foreground="White" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <RadioButton Content="{Binding Path=MaterialName}"
@@ -150,9 +150,13 @@
         
         <!--Material Properties Panel-->
         <Border  Margin="10" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" CornerRadius="10">
-            <Viewbox StretchDirection="Both" Stretch="Uniform">
-                <c:PropertiesPanel Width="800" Height="250"/>
-            </Viewbox>
+            <StackPanel>
+                <TextBlock Grid.Row="0" Margin="5" Text="MATERIAL PROPERTIES" FontWeight="Bold" FontSize="12" Foreground="White"/>
+                <Viewbox Margin="10" StretchDirection="Both" Stretch="Uniform">
+                    <c:PropertiesPanel Width="800" Height="250"/>
+                </Viewbox>
+            </StackPanel>
+            
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="0,0">
                     <GradientStop Color=" #262626" Offset="0.0" />
