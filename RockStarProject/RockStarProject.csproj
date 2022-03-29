@@ -57,6 +57,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="MVVM\PropertiesViewModel.cs" />
+    <Compile Include="Themes\Controls\ModifierDial.xaml.cs">
+      <DependentUpon>ModifierDial.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Themes\Controls\PropertiesPanel.xaml.cs">
       <DependentUpon>PropertiesPanel.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\Controls\ModifierDial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Styles\MenuButtonTheme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -165,6 +172,9 @@
     <Resource Include="Images\Onyx\material.png" />
     <Resource Include="Images\Onyx\material_ball.png" />
     <Resource Include="Images\Onyx\normal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Core\FavoritesList.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

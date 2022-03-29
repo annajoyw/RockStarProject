@@ -90,18 +90,18 @@
         
         <!--Favorites Panel-->
         <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-1" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
-            <ListBox Background="#000000" BorderThickness="0" Margin="5" ItemsSource="{Binding ElementName=FavoritesPanel, Path=DataContext.FavoritesList}" Foreground="White" >
+            <ListBox Background="#000000" BorderThickness="0" x:Name="FavoriteListBox" ItemsSource="{Binding ElementName=FavoritesPanel, Path=DataContext.FavoritesList}"  Margin="5" Foreground="White" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <RadioButton Content="{Binding MaterialModel.Name}"
+                        <RadioButton Content="{Binding MaterialModel.Name}" 
+                                     
                              Height="auto"
                              MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
                              Command="{Binding SelectedMaterialChangedCommand}"
-                             x:Name="Stone"
-                             CommandParameter="{Binding ElementName=Stone, Path=Content}"
+                             CommandParameter="{Binding MaterialModel.Name}"
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

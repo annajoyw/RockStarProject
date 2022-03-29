@@ -67,8 +67,6 @@ namespace RockStarProject.MVVM
                 OnPropertyChanged();
                 MaterialModel.Name = MaterialName;
                 MaterialModel.IsFavorite = value;
-                XMLReaderAndWriter.WriteXmlFile(MaterialModel);
-                //FavoritesList.Add(MaterialModel);
             }
         }
 
@@ -158,7 +156,12 @@ namespace RockStarProject.MVVM
 
         private void MaterialChanged(object param)
         {
-            IsFavoriteChecked = false;
+            var fav = FavoritesList.FirstOrDefault(x => x.Name == (string)param);
+            if (fav == null)
+                IsFavoriteChecked = false;
+            else
+                IsFavoriteChecked = true;
+
             MaterialName = (string)param;
             switch (MaterialName)
             {
@@ -219,7 +222,12 @@ namespace RockStarProject.MVVM
 
         private void AddToFavorites(object p)
         {
-            FavoritesList.Add(MaterialModel);
+            if (MaterialModel.IsFavorite == true)
+                FavoritesList.Add(new MaterialModel() { Name = MaterialName }) ;
+            else
+                FavoritesList.Remove(MaterialModel);
+            
+            XMLReaderAndWriter.WriteXmlFile(FavoritesList);
         }
 
         #endregion
@@ -228,7 +236,7 @@ namespace RockStarProject.MVVM
 
         public MaterialViewModel()
         {
-
+           // XMLReaderAndWriter.ReadXmlFile<ObservableCollection<MaterialModel>>();
         }
 
         #endregion

@@ -26,9 +26,10 @@ namespace RockStarProject.Core
                     writer.Close();
             }
         }
-        public static T ReadXmlFile<T>() where T : new()
+        public static T ReadXmlFile<T>()
         {
-            var filePath = "C:\\Users\\Anna\\source\\repos\\RockStarProject\\RockStarProject\\Core\\Favorites.xml";
+            var filePath = "..\\..\\Core\\Favorites.xml";
+            //var filePath = "..\\..\\Core\\FavoritesList.xml";
             TextReader reader = null;
             try
             {

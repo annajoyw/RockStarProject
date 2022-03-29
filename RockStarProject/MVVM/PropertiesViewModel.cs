@@ -36,7 +36,6 @@ namespace RockStarProject.MVVM
         }
         #endregion
 
-
         public PropertiesViewModel()
         {
 

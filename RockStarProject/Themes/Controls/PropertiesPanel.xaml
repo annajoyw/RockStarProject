@@ -72,7 +72,8 @@
             </WrapPanel>
         </StackPanel>
         <Viewbox Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" StretchDirection="Both" Stretch="Uniform" Grid.Column="1" >
-            <local:PropertyDial ClipToBounds="True" Height="100" Width="100" />
+            <!--<local: ClipToBounds="True" Height="100" Width="100" />-->
+            <local:
         </Viewbox>
         <Viewbox Grid.Column="2" Grid.Row="0" VerticalAlignment="Center" StretchDirection="Both" Stretch="Uniform" >
             <local:PropertyDial ClipToBounds="True" Height="100" Width="100" />

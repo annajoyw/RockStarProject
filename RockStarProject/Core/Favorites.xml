@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MaterialModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>Stone</Name>
-  <IsFavorite>false</IsFavorite>
-</MaterialModel>
+<ArrayOfMaterialModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MaterialModel>
+    <Name>Blue Agate</Name>
+    <IsFavorite>false</IsFavorite>
+  </MaterialModel>
+  <MaterialModel>
+    <Name>Gold</Name>
+    <IsFavorite>false</IsFavorite>
+  </MaterialModel>
+</ArrayOfMaterialModel>
