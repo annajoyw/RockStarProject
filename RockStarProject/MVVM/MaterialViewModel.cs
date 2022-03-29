@@ -34,6 +34,19 @@ namespace RockStarProject.MVVM
             }
         }
 
+        private ICommand addToFavoritesCommand;
+        public ICommand AddToFavoritesCommand
+        {
+            get
+            {
+                if (addToFavoritesCommand == null)
+                    addToFavoritesCommand = new RelayCommand(p => AddToFavorites(p));
+                return addToFavoritesCommand;
+            }
+        }
+
+       
+
         #endregion
 
         #region Model Properties
@@ -54,7 +67,7 @@ namespace RockStarProject.MVVM
                 MaterialModel.Name = MaterialName;
                 MaterialModel.IsFavorite = value;
                 XMLReaderAndWriter.WriteXmlFile(MaterialModel);
-                FavoritesList.Add(MaterialModel);
+                //FavoritesList.Add(MaterialModel);
             }
         }
 
@@ -144,6 +157,7 @@ namespace RockStarProject.MVVM
 
         private void MaterialChanged(object param)
         {
+            IsFavoriteChecked = false;
             MaterialName = (string)param;
             switch (MaterialName)
             {
@@ -200,6 +214,11 @@ namespace RockStarProject.MVVM
                 TextureLable = "Normal";
                 return;
             }
+        }
+
+        private void AddToFavorites(object p)
+        {
+            FavoritesList.Add(MaterialModel);
         }
 
         #endregion

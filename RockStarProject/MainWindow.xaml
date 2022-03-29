@@ -28,13 +28,14 @@
         <Border Grid.Row ="1" Grid.RowSpan="2" Grid.Column="0" Background="#000000"/>
         
         <!--Library Panel-->
-        <Expander  Header="Library" Margin="1" Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
+        <Expander  Header="Library" Margin="-2" Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
             <Expander.Content>
-                <StackPanel Margin="0 10" Background="#000000">
+                <StackPanel Margin="-1" Background="#000000">
                     <RadioButton
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"
                              Content="Blue Agate"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -45,6 +46,7 @@
                              />
                     <RadioButton Content="Copper"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -54,6 +56,7 @@
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
                     <RadioButton Content="Gold"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -63,6 +66,7 @@
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
                     <RadioButton Content="Onyx"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -72,6 +76,7 @@
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
                     <RadioButton Content="Stone"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -84,12 +89,13 @@
         </Expander>
         
         <!--Favorites Panel-->
-        <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-1.55" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
-            <ListBox Background="#000000" BorderThickness="0" ItemsSource="{Binding FavoritesList}" Foreground="White" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}">
+        <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-5" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
+            <ListBox DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}" Background="#000000" BorderThickness="0" ItemsSource="{Binding ElementName=FavoritesPanel, Path=DataContext.FavoritesList}" Foreground="White" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <RadioButton Content="{Binding Path=MaterialName}"
+                        <RadioButton Content="{Binding MaterialModel.Name}"
                              Height="auto"
+                             MinHeight="30"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
@@ -98,14 +104,13 @@
                              CommandParameter="{Binding ElementName=Stone, Path=Content}"
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"/>
                     </DataTemplate>
-
                 </ListBox.ItemTemplate>
             </ListBox>
         </Expander>
         
         <!--Material Name-->
         <WrapPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
-            <ToggleButton Margin="5 5 0 0"  HorizontalAlignment="Left" IsChecked="{Binding IsFavoriteChecked, Mode=TwoWay}" Template="{DynamicResource StarToggleButton}" Height="20" Width="20"  />
+            <ToggleButton Margin="5 5 0 0"  HorizontalAlignment="Left" IsChecked="{Binding IsFavoriteChecked, Mode=TwoWay}" Command="{Binding AddToFavoritesCommand}" Template="{DynamicResource StarToggleButton}" Height="20" Width="20"  />
             <TextBlock Margin="5" Foreground="White" FontSize="18" Text="{Binding MaterialName}" HorizontalAlignment="Right" ></TextBlock>
         </WrapPanel>
         
