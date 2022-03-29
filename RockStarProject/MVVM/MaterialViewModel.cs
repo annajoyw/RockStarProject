@@ -1,6 +1,7 @@
 ﻿using RockStarProject.Core;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -140,8 +141,8 @@ namespace RockStarProject.MVVM
             }
         }
 
-        private List<MaterialModel> favoritesList = new List<MaterialModel>();
-        public List<MaterialModel> FavoritesList
+        private ObservableCollection<MaterialModel> favoritesList = new ObservableCollection<MaterialModel>();
+        public ObservableCollection<MaterialModel> FavoritesList
         {
             get { return favoritesList; }
             set

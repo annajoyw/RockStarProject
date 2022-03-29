@@ -30,7 +30,7 @@
         <!--Library Panel-->
         <Expander  Header="Library" Margin="-2" Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
             <Expander.Content>
-                <StackPanel Margin="-1" Background="#000000">
+                <StackPanel Margin="5" Background="#000000">
                     <RadioButton
                              DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}"
                              Content="Blue Agate"
@@ -89,8 +89,8 @@
         </Expander>
         
         <!--Favorites Panel-->
-        <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-5" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
-            <ListBox DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext}" Background="#000000" BorderThickness="0" ItemsSource="{Binding ElementName=FavoritesPanel, Path=DataContext.FavoritesList}" Foreground="White" >
+        <Expander x:Name="FavoritesPanel" Header="Favorites" Grid.Row="2" Margin="-1" Grid.RowSpan="4" Style="{DynamicResource ExpanderStyle1}" Foreground="White" FontSize="20">
+            <ListBox Background="#000000" BorderThickness="0" Margin="5" ItemsSource="{Binding ElementName=FavoritesPanel, Path=DataContext.FavoritesList}" Foreground="White" >
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <RadioButton Content="{Binding MaterialModel.Name}"
