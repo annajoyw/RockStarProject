@@ -13,14 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace RockStarProject.Themes.Controls
 {
     /// <summary>
-    /// Interaction logic for UserControl1.xaml
+    /// Interaction logic for TESTCONTROL.xaml
     /// </summary>
-    public partial class UserControl1 : UserControl
+    public partial class TexturePanel : UserControl
     {
-        public UserControl1()
+        public TexturePanel()
         {
             InitializeComponent();
         }

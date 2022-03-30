@@ -11,9 +11,7 @@
                  Fill="Gray"
                  Stroke="Black"/>
         <Ellipse 
-                
-                 Stroke="Black"
-                 >
+                 Stroke="Black">
             <Ellipse.Fill>
                 <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5">
                     <GradientStop Color="#00b09c" Offset="0.5" />

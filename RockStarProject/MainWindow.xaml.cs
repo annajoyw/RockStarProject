@@ -26,13 +26,9 @@ namespace RockStarProject
         {
             InitializeComponent();
             ViewModel = (MaterialViewModel)DataContext;
-            if(ViewModel.FavoritesList != null)
-            {
-                foreach (var item in ViewModel.FavoritesList)
-                {
-
-                }
-            }
+      
         }
+
+     
     }
 }

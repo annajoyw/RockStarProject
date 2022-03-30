@@ -4,12 +4,4 @@
     <Name>Blue Agate</Name>
     <IsFavorite>false</IsFavorite>
   </MaterialModel>
-  <MaterialModel>
-    <Name>Onyx</Name>
-    <IsFavorite>false</IsFavorite>
-  </MaterialModel>
-  <MaterialModel>
-    <Name>Gold</Name>
-    <IsFavorite>false</IsFavorite>
-  </MaterialModel>
 </ArrayOfMaterialModel>
