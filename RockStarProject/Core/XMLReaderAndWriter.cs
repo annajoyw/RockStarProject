@@ -29,7 +29,6 @@ namespace RockStarProject.Core
         public static T ReadXmlFile<T>()
         {
             var filePath = "..\\..\\Core\\Favorites.xml";
-            //var filePath = "..\\..\\Core\\FavoritesList.xml";
             TextReader reader = null;
             try
             {

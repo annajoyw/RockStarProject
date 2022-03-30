@@ -66,6 +66,9 @@
     <Compile Include="Themes\Controls\PropertyDial.xaml.cs">
       <DependentUpon>PropertyDial.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Themes\Controls\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,7 +77,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Core\DelegateCommand.cs" />
     <Compile Include="Core\Notifiable.cs" />
     <Compile Include="Core\RelayCommand.cs" />
     <Compile Include="Core\XMLReaderAndWriter.cs" />
@@ -83,6 +85,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Themes\Controls\ModifierDial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Controls\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -172,9 +178,6 @@
     <Resource Include="Images\Onyx\material.png" />
     <Resource Include="Images\Onyx\material_ball.png" />
     <Resource Include="Images\Onyx\normal.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Core\FavoritesList.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

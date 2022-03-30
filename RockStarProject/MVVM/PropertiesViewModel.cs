@@ -10,7 +10,7 @@ namespace RockStarProject.MVVM
     public class PropertiesViewModel : Notifiable
     {
         #region Slider Values
-        private int metalnessSliderValue = 5;
+        private int metalnessSliderValue = 7;
         public int MetalnessSliderValue
         {
             get { return metalnessSliderValue; }
@@ -22,13 +22,13 @@ namespace RockStarProject.MVVM
             get { return sheenSliderValue; }
             set { sheenSliderValue = value; OnPropertyChanged(); }
         }
-        private int porositySliderValue = 5;
+        private int porositySliderValue = 3;
         public int PorositySliderValue
         {
             get { return porositySliderValue; }
             set { porositySliderValue = value; OnPropertyChanged(); }
         }
-        private int translucencySliderValue = 5;
+        private int translucencySliderValue = 8;
         public int TranslucencySliderValue
         {
             get { return translucencySliderValue; }
