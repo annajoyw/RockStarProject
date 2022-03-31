@@ -236,7 +236,8 @@ namespace RockStarProject.MVVM
 
         public MaterialViewModel()
         {
-           // XMLReaderAndWriter.ReadXmlFile<ObservableCollection<MaterialModel>>();
+            XMLReaderAndWriter.ReadXmlFile<ObservableCollection<MaterialModel>>();
+
         }
 
         #endregion
